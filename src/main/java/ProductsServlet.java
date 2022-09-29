@@ -9,7 +9,6 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 
 import java.io.*;
-import java.util.*;
 
 import org.slf4j.*;
 
@@ -28,10 +27,9 @@ public class ProductsServlet implements Servlet {
 
         resp.getWriter().println("ProductId\tTitle\tPrice\n");
         final int MAX_PROD = 10;
-        List<Product> prods = new ArrayList<>();
         for (int i = 1; i <= MAX_PROD; i++) {
-            prods.add(new Product(i, "Product #" + i, Product.randomNumber(0, 100)));
-            resp.getWriter().println(prods.get(i-1).getId()+"\t"+prods.get(i-1).getTitle()+"\t"+prods.get(i-1).getPrice());
+            Product p = new Product(i, "Product #"+i, Product.randomNumber(0, 100));
+            resp.getWriter().println(p.getId()+"\t"+p.getTitle()+"\t"+p.getPrice());
         }
     }
 
