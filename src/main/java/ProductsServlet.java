@@ -1,3 +1,10 @@
+/*
+    Задание.
+        создать сервлет ProductsServlet (/products)
+        создать объект Product с 3 полями - id, title, price
+        при обращении к /products вывести список из 10 продуктов
+*/
+
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 
